@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    // https://mvnrepository.com/artifact/com.microsoft.edge/msedge-selenium-tools-java
+    implementation group: 'com.microsoft.edge', name: 'msedge-selenium-tools-java', version: '3.141.0'
+// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'com.opencsv', name: 'opencsv', version: '5.5'
+
+}
+jar{
+    manifest{
+        attributes "Main-Class": "Main"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
